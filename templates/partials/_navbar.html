@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <div>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Ana Sayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/chat">Sohbet</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/news">Haberler</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">Hakkımızda</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul class="navbar-nav">
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <div class="navbar-text"> {{user.username}} olarak giriş yapıldı | </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Çıkış yap</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Giriş yap</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

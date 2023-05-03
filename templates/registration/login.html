@@ -1,0 +1,11 @@
+{% extends 'partials/_base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %} Giriş yap {% endblock %}
+{% block content %}
+<form method="POST">
+{% csrf_token %} {{form|crispy}}
+<p> Hesabın yok mu? <a href="/sign-up">Bir tane oluştur!</a></p>
+<button type="submit" class="btn btn-success"> Giriş yap </button>
+</form>
+{% endblock %}
